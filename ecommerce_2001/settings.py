@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +80,7 @@ DATABASES = {
         'NAME': 'ecommerce_2001',
         'USER': 'ecommerce_2001',
         'PASSWORD': 'ecommerce_2001',
-        'HOSTNAME': 'localhost',
+        'HOST': 'localhost',
         'PORT': '',
     }
 }
