@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'ecommerce_2001',
         'USER': 'ecommerce_2001',
         'PASSWORD': 'ecommerce_2001',
-        'HOSTNAME': 'localhost',
+        'HOST': 'localhost',
         'PORT': '',
     }
 }

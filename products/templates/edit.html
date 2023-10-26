@@ -14,13 +14,15 @@
         <h1>E-Commerce</h1>
     </header>
     <main class="container mt-5">
-        <h2>New Product</h2>
-        <form action="/products/save/" method="post">
+        <h2>Edit Product</h2>
+        <form action="/products/update/{{ product.id }}/" method="post">
             {% csrf_token %}
             <label for="name" class="form-label mt-3">Name</label>
-            <input type="text" name="name" id="name" class="form-control">
+            <input type="text" name="id" id="id" class="form-control" value="{{ product.id }}" readonly>
+            <label for="name" class="form-label mt-3">Name</label>
+            <input type="text" name="name" id="name" class="form-control" value="{{ product.name }}">
             <label for="brand" class="form-label mt-3">Brand</label>
-            <input type="text" name="brand" id="brand" class="form-control">
+            <input type="text" name="brand" id="brand" class="form-control" value="{{ product.brand }}">
             <a href="/products/" class="btn btn-danger mt-3">Back</a>
             <button class="btn btn-primary mt-3">Submit</button>
         </form>
