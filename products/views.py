@@ -7,8 +7,8 @@ from products.models import Product
 
 
 def index(request):
-    products = Product.objects.all()
-    template = loader.get_template("index.html")
+    products = Product.objects.all().values()
+    template = loader.get_template("products_index.html")
     context = {
         "products": products,
     }
@@ -16,7 +16,7 @@ def index(request):
 
 
 def create(request):
-    return render(request, "create.html")
+    return render(request, "products_create.html")
 
 
 def save(request):
@@ -24,7 +24,7 @@ def save(request):
     product.save()
 
     products = Product.objects.all()
-    template = loader.get_template("index.html")
+    template = loader.get_template("products_index.html")
     context = {
         "products": products,
     }
@@ -33,7 +33,7 @@ def save(request):
 
 def edit(request, id):
     product = Product.objects.get(id=id)
-    template = loader.get_template("edit.html")
+    template = loader.get_template("products_edit.html")
     context = {
         "product": product,
     }
@@ -47,7 +47,7 @@ def update(request, id):
     product.save()
 
     products = Product.objects.all()
-    template = loader.get_template("index.html")
+    template = loader.get_template("products_index.html")
     context = {
         "products": products,
     }

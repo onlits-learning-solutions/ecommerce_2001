@@ -6,16 +6,15 @@ from django.template import loader
 
 def index(request):
     sellers = Seller.objects.all().values()
-    template = loader.get_template("index.html")
+    template = loader.get_template("sellers_index.html")
     context = {
         "sellers": sellers,
     }
     return HttpResponse(template.render(context, request))
-    # return HttpResponse(sellers)
 
 
 def create(request):
-    return render(request, "create.html")
+    return render(request, "sellers_create.html")
 
 
 def save(request):
@@ -29,7 +28,7 @@ def save(request):
     )
     seller.save()
     sellers = Seller.objects.all().values()
-    template = loader.get_template("index.html")
+    template = loader.get_template("sellers_index.html")
     context = {
         "sellers": sellers,
     }
